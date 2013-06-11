@@ -60,8 +60,7 @@ PRODUCT_COPY_FILES += \
 
 # Packages
 PRODUCT_PACKAGES := \
-    GalaxyS2Settings \
-    CellBroadcastReceiver
+    DeviceSettings
 
 # WIMAX
 PRODUCT_PACKAGES += \
