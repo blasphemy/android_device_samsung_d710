@@ -1,4 +1,5 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 #define BTM_DEF_LOCAL_NAME   "SPH-D710"
+#define BTHC_USERIAL_READ_MEM_SIZE (1034)
 #endif
