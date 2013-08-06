@@ -143,6 +143,8 @@ on post-fs-data
     chown radio radio /dev/dpram0
     chown radio radio /dev/dpram1
     chown radio radio /dev/ttyCPLOG0
+    restorecon /dev/swmxctl
+    restorecon /dev/uwibro
 
 # permission for HDMI audio path
     chown media audio /sys/class/hdmi_audio/hdmi_audio/hdmi_audio_set_ext
@@ -386,7 +388,7 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     -Dnl80211 -iwlan0 -e/data/misc/wifi/entropy.bin \
     -c/data/misc/wifi/wpa_supplicant.conf
     class main
-    socket wpa_wlan0 dgram 660 wifi wifi
+    socket wpa_wlan0 dgram 660 wifi wifi u:object_r:wpa_socket:s0
     disabled
     oneshot
 
