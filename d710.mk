@@ -50,7 +50,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #include sunbeam live wallpaper
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH_/prebuilt/phasebeamorange.apk:/system/app/phasebeamorange.apk
+    $(LOCAL_PATH)/prebuilt/phasebeamorange.apk:system/app/phasebeamorange.apk
 
 # Net
 PRODUCT_COPY_FILES += \
