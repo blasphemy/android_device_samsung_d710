@@ -48,6 +48,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20
 
+#include sunbeam live wallpaper
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH_/prebuilt/sunbeam-live-wallpaper.apk:/system/app/sunbeam-live-wallpaper.apk
+
 # Net
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ip-up:system/etc/ppp/ip-up \
