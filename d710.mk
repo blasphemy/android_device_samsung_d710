@@ -59,10 +59,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     AngryGPS \
     SprintMenu \
-    SystemUpdateUI
-
-#    WiMAXSettings \
-#    WiMAXHiddenMenu \
+    SystemUpdateUI \
+    WiMAXSettings \
+    WiMAXHiddenMenu
 
 # Screen density is actually considered a locale (since it is taken into account
 # the the build-time selection of resources). The product definitions including
