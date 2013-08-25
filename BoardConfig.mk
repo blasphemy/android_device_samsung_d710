@@ -20,7 +20,6 @@
 -include device/samsung/galaxys2-common/BoardCommonConfig.mk
 
 TARGET_BOARD_INFO_FILE := device/samsung/d710/board-info.txt
-TARGET_RECOVERY_INITRC := device/samsung/d710/recovery/recovery.rc
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/d710/bluetooth/include
