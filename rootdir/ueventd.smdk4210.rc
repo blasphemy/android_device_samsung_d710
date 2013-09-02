@@ -96,6 +96,3 @@
 /dev/i2c-5                0660   system     system
 
 /dev/block/mmcblk0p4      0660   system     system
-
-/dev/cdma_boot0           0660   radio      radio
-/dev/cdma_ipc0            0660   radio      radio

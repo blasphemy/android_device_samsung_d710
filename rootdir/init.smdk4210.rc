@@ -37,16 +37,10 @@ on fs
     chown radio system /efs/wifi
     chmod 0775 /efs/bluetooth
     chmod 0775 /efs/wifi
-    chown radio system /efs
-    chmod 0771 /efs
 
     mkdir /data/misc/vpn/profiles 0770 system system
     mkdir /data/misc/radio 0775 radio system
     chmod 0770 /data/misc/wifi 
-
-# IPC sysfs
-    chown radio radio /sys/devices/virtual/misc/multipdp/waketime
-    symlink /dev/block/mmcblk0p8 /dev/mbin0
 
 # Restorecon
     restorecon /efs/nv_data.bin
@@ -386,13 +380,10 @@ on boot
     setprop status.battery.level_scale 9
 
 # For RIL
-service ril-daemon /system/bin/rild
+service cpboot-daemon /sbin/cbd -d -p 8
     class main
-    socket rild stream 660 root radio
-    socket rild-debug stream 660 radio system
     user root
-    group radio cache inet misc audio sdcard_rw log
-    onrestart restart cpboot-daemon
+    group radio cache inet misc audio sdcard_rw log sdcard_r
 
 service mdnsd /system/bin/mdnsd
 	class main
@@ -489,6 +480,18 @@ on property:init.svc.macloader=stopped
     chmod 0664 /data/.cid.info
     chown system root /data/.rev
     chmod 0660 /data/.rev
+
+service gpsd /system/bin/gpsd
+    class main
+    user system
+    group system inet
+
+service pppd_cdma /system/bin/pppd_runner
+    class main
+    user root
+    group radio cache inet misc system
+    disabled
+    oneshot
 
 # Wimax changes
 #service dhcpcd_uwbr0 /system/bin/dhcpcd -ABKL
