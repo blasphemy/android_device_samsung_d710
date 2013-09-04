@@ -55,6 +55,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sirfgps.conf:system/etc/sirfgps.conf \
     $(LOCAL_PATH)/configs/apns-conf.xml:system/etc/apns-conf.xml
 
+# Sensors
+PRODUCT_PACKAGES := \
+    sensors.exynos4
+
 # WIMAX
 PRODUCT_PACKAGES += \
     AngryGPS \
